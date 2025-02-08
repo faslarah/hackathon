@@ -1,57 +1,61 @@
 /* Ensure the body takes full height and uses flexbox */
 body {
-    margin: 0;
+    margin: 0; /* Removed margin */
     height: 100vh; /* Full height */
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     font-family: Arial, sans-serif;
+    font-size: 18px; /* Increased base font size */
 }
 
 /* Styling for the container */
 .container {
     text-align: center;
-    padding: 20px;
-    border: 2px solid #333;
+    padding: 30px; /* Increased padding */
+    /* Removed border to eliminate the box */
     border-radius: 8px;
     width: 100%;
-    max-width: 400px; /* Limits the width of the container */
+    max-width: 450px; /* Increased max-width */
+    background-color: rgba(255, 255, 255, 0.1); /* Optional: Light background color */
+    backdrop-filter: blur(8px); /* Optional: Frosted glass effect */
 }
 
 /* Title styling (larger text) */
 h1 {
-    font-size: 36px; /* Larger size for the main title */
-    margin-bottom: 10px; /* Spacing below the title */
+    font-size: 45px; /* Larger size for the main title */
+    margin-bottom: 25px; /* Increased spacing below the title */
 }
 
-/* Subtitle styling (smaller text) */
+/* Subtitle styling (smaller text but still large) */
 h2 {
-    font-size: 18px; /* Smaller size for the subtitle */
-    margin-bottom: 20px; /* Spacing below the subtitle */
+    font-size: 20px; /* Larger subtitle size */
+    margin-bottom: 25px; /* Increased spacing below the subtitle */
 }
 
 /* Form styling */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Spacing between inputs */
+    gap: 20px; /* Spacing between inputs */
 }
 
 /* Input fields and button */
 input[type="text"],
 input[type="password"],
 button {
-    padding: 10px;
-    font-size: 16px;
+    padding: 15px; /* Increased padding */
+    font-size: 18px; /* Larger font size for inputs and button */
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px; /* Increased border-radius */
 }
 
 /* Button style */
 button {
-    background-color: #4CAF50;
+    background-color: #0f228e;
     color: white;
     cursor: pointer;
+    font-weight: bold; /* Make the button text bold */
 }
 
 button:hover {
@@ -61,8 +65,8 @@ button:hover {
 /* Footer styling */
 footer {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     width: 100%;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px; /* Slightly bigger footer text */
 }

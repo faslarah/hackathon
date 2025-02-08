@@ -79,7 +79,7 @@ header nav ul li a {
 .search-bar button {
     padding: 10px 20px;
     background-color: #333;
-    color: #fff;
+    color: #5f3535;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -185,7 +185,7 @@ header nav ul li a {
 /* Call to Action Section */
 .cta {
     background-color: #1a73e8;
-    color: #fff;
+    color: #1a1616;
     text-align: center;
     padding: 40px 20px;
     background-image: url('images/evie-s-yDN0aAiHSMg-unsplash.jpg'); /* Call to action background image */

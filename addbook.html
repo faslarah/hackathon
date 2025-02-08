@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book | Book Sharing System</title>
+    <link rel="stylesheet" href="addbookcss.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to BookShare</h1>
+        <p>Add a Book and Share the Knowledge!</p>
+    </section>
+
+    <!-- Add Book Form Section -->
+    <section class="add-book">
+        <h2>Add Your Book</h2>
+        <form id="addBookForm">
+            <label for="bookTitle">Book Title:</label>
+            <input type="text" id="bookTitle" name="bookTitle" required>
+
+            <label for="bookAuthor">Author:</label>
+            <input type="text" id="bookAuthor" name="bookAuthor" required>
+
+            <label for="bookGenre">Genre:</label>
+            <input type="text" id="bookGenre" name="bookGenre" required>
+
+            <label for="bookDescription">Description:</label>
+            <textarea id="bookDescription" name="bookDescription" rows="4" required></textarea>
+            
+            <button type="submit">Add Book</button>
+        </form>
+    </section>
+
+    <!-- Display Added Books Section -->
+    <section class="book-list">
+        <h2>Books Added</h2>
+        <div class="book-grid" id="bookGrid">
+            <!-- Dynamically added books will appear here -->
+        </div>
+    </section>
+
+    <script>
+        // Handle the form submission
+        document.getElementById("addBookForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent page refresh
+
+            // Get the form values
+            const bookTitle = document.getElementById("bookTitle").value;
+            const bookAuthor = document.getElementById("bookAuthor").value;
+            const bookGenre = document.getElementById("bookGenre").value;
+            const bookDescription = document.getElementById("bookDescription").value;
+            const bookImage = document.getElementById("bookImage").value;
+
+            // Create a new book card element
+            const newBookCard = document.createElement("div");
+            newBookCard.classList.add("book-card");
+
+            // Set the inner HTML for the book card
+            newBookCard.innerHTML = `
+                <img src="${bookImage}" alt="${bookTitle}">
+                <h3>${bookTitle}</h3>
+                <p><strong>Author:</strong> ${bookAuthor}</p>
+                <p><strong>Genre:</strong> ${bookGenre}</p>
+                <p><strong>Description:</strong> ${bookDescription}</p>
+                <button onclick="borrowBook('${bookTitle}')">Borrow</button>
+            `;
+
+            // Append the new book card to the book grid
+            document.getElementById("bookGrid").appendChild(newBookCard);
+
+            // Reset the form
+            document.getElementById("addBookForm").reset();
+        });
+
+        // Function to handle the borrow button click (temporary functionality)
+        function borrowBook(title) {
+            alert(`You have borrowed "${title}"!`);
+        }
+    </script>
+
+</body>
+</html>

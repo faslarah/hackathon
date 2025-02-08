@@ -2,7 +2,7 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [TriFusion]
 
 
 ### Team Members

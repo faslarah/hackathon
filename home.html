@@ -8,27 +8,21 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header (Removed BookShare, Home, Browse Books, My Library, Sign Up, and Login) -->
     <header>
-        <div class="logo">BookShare</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Browse Books</a></li>
-                <li><a href="#">My Library</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
+        <!-- The header is now empty -->
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <h1>Welcome to BookShare</h1>
         <p>Share the knowledge, one book at a time.</p>
-        <button onclick="location.href='#'">Browse Books</button>
+        <!-- Search Bar and Search Button -->
+        <div class="search-bar-container">
+            <input type="text" id="search-input" placeholder="Search for books...">
+            <button onclick="searchBooks()">Search</button>
+        </div>
     </section>
-
 
     <!-- Featured Books Section -->
     <section class="featured-books">
@@ -57,8 +51,7 @@
 
     <!-- Call to Action Section -->
     <section class="cta">
-        <h2>ADD YOUR BOOK HERE!
-        </h2>
+        <h2>ADD YOUR BOOK HERE!</h2>
         <button onclick="location.href='#'">Get Started</button>
     </section>
 
@@ -75,6 +68,14 @@
             <a href="#">Twitter</a>
         </div>
     </footer>
+
+    <script>
+        function searchBooks() {
+            const searchQuery = document.getElementById('search-input').value;
+            alert("You searched for: " + searchQuery);
+            // You can implement the actual search functionality here.
+        }
+    </script>
 
 </body>
 </html>

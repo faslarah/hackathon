@@ -19,7 +19,7 @@
         <p>Share the knowledge, one book at a time.</p>
         <!-- Search Bar and Search Button -->
         <div class="search-bar-container">
-            <input type="text" id="search-input" placeholder="Search for books...">
+            <input type="text" id="search-input" placeholder="Search for books..." onkeyup="searchBooks()">
             <button onclick="searchBooks()">Search</button>
         </div>
     </section>
@@ -27,32 +27,15 @@
     <!-- Featured Books Section -->
     <section class="featured-books">
         <h2>Featured Books</h2>
-        <div class="book-grid">
-            <div class="book-card">
-                <img src="book1.jpg" alt="Book 1">
-                <h3>The Great Gatsby</h3>
-                <p>Genre: Fiction</p>
-                <button>Borrow</button>
-            </div>
-            <div class="book-card">
-                <img src="book2.jpg" alt="Book 2">
-                <h3>The Diary of a Young Girl</h3>
-                <p>Genre: Non-fiction</p>
-                <button>Borrow</button>
-            </div>
-            <div class="book-card">
-                <img src="book3.jpg" alt="Book 3">
-                <h3>The Lord of the Rings</h3>
-                <p>Genre: Fantasy</p>
-                <button>Borrow</button>
-            </div>
+        <div class="book-grid" id="bookGrid">
+            <!-- Dynamically added books will appear here after search -->
         </div>
     </section>
 
     <!-- Call to Action Section -->
     <section class="cta">
         <h2>ADD YOUR BOOK HERE!</h2>
-        <button onclick="location.href='#'">Get Started</button>
+        <button onclick="window.location.href='addbook.html'">Get Started</button>
     </section>
 
     <!-- Footer -->
@@ -70,12 +53,8 @@
     </footer>
 
     <script>
+        // Function to search books
         function searchBooks() {
-            const searchQuery = document.getElementById('search-input').value;
-            alert("You searched for: " + searchQuery);
-            // You can implement the actual search functionality here.
-        }
-    </script>
-
-</body>
-</html>
+            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+            const bookGrid = document.getElementById("bookGrid");
+            bookGrid.inner

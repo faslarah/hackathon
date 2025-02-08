@@ -34,14 +34,6 @@
         </form>
     </section>
 
-    <!-- Display Added Books Section -->
-    <section class="book-list">
-        <h2>Books Added</h2>
-        <div class="book-grid" id="bookGrid">
-            <!-- Dynamically added books will appear here -->
-        </div>
-    </section>
-
     <script>
         // Handle the form submission
         document.getElementById("addBookForm").addEventListener("submit", function(event) {
@@ -52,33 +44,23 @@
             const bookAuthor = document.getElementById("bookAuthor").value;
             const bookGenre = document.getElementById("bookGenre").value;
             const bookDescription = document.getElementById("bookDescription").value;
-            const bookImage = document.getElementById("bookImage").value;
 
-            // Create a new book card element
-            const newBookCard = document.createElement("div");
-            newBookCard.classList.add("book-card");
+            // Store the book data in localStorage (you can store multiple books as an array)
+            const bookData = {
+                title: bookTitle,
+                author: bookAuthor,
+                genre: bookGenre,
+                description: bookDescription
+            };
 
-            // Set the inner HTML for the book card
-            newBookCard.innerHTML = `
-                <img src="${bookImage}" alt="${bookTitle}">
-                <h3>${bookTitle}</h3>
-                <p><strong>Author:</strong> ${bookAuthor}</p>
-                <p><strong>Genre:</strong> ${bookGenre}</p>
-                <p><strong>Description:</strong> ${bookDescription}</p>
-                <button onclick="borrowBook('${bookTitle}')">Borrow</button>
-            `;
-
-            // Append the new book card to the book grid
-            document.getElementById("bookGrid").appendChild(newBookCard);
+            let books = JSON.parse(localStorage.getItem('books')) || [];
+            books.push(bookData); // Add the new book to the books array
+            localStorage.setItem('books', JSON.stringify(books)); // Store the updated books array in localStorage
 
             // Reset the form
             document.getElementById("addBookForm").reset();
+            alert("Book added successfully!");
         });
-
-        // Function to handle the borrow button click (temporary functionality)
-        function borrowBook(title) {
-            alert(`You have borrowed "${title}"!`);
-        }
     </script>
 
 </body>

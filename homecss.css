@@ -277,3 +277,11 @@ footer ul li a {
 .search-bar-container button:hover {
     background-color: #45a049;
 }
+/* Reset margin and padding for the call to action section */
+.cta {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+

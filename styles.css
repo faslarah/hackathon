@@ -1,0 +1,68 @@
+/* Ensure the body takes full height and uses flexbox */
+body {
+    margin: 0;
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for the container */
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; /* Limits the width of the container */
+}
+
+/* Title styling (larger text) */
+h1 {
+    font-size: 36px; /* Larger size for the main title */
+    margin-bottom: 10px; /* Spacing below the title */
+}
+
+/* Subtitle styling (smaller text) */
+h2 {
+    font-size: 18px; /* Smaller size for the subtitle */
+    margin-bottom: 20px; /* Spacing below the subtitle */
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between inputs */
+}
+
+/* Input fields and button */
+input[type="text"],
+input[type="password"],
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button style */
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer styling */
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}

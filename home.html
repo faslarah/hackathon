@@ -1,50 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Sharing System</title>
     <link rel="stylesheet" href="homecss.css">
 </head>
+
 <body>
 
     <!-- Header -->
     <header>
-        <div class="logo">BookShare</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Browse Books</a></li>
-                <li><a href="#">My Library</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
+        <!-- Removed logo and navigation items -->
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <h1>Welcome to BookShare</h1>
         <p>Share the knowledge, one book at a time.</p>
-        <button onclick="location.href='#'">Browse Books</button>
-    </section>
-
-    <!-- How it Works Section -->
-    <section class="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps">
-            <div class="step">
-                <h3>Step 1</h3>
-                <p>Find a book you want to borrow.</p>
-            </div>
-            <div class="step">
-                <h3>Step 2</h3>
-                <p>Request the book or share it with someone.</p>
-            </div>
-            <div class="step">
-                <h3>Step 3</h3>
-                <p>Enjoy reading and share your feedback.</p>
-            </div>
+        <div class="search-bar-container">
+            <input type="text" placeholder="Search for books..." id="search-input">
+            <button onclick="searchBooks()">Search</button>
         </div>
     </section>
 
@@ -71,12 +48,6 @@
                 <button>Borrow</button>
             </div>
         </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta">
-        <h2>Join Our Community</h2>
-        <button onclick="location.href='#'">Get Started</button>
     </section>
 
     <!-- Footer -->

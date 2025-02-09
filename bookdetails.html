@@ -58,6 +58,7 @@
 
             // Display the book details or show the "not found" message
             const bookDetailsContainer = document.getElementById('book-details-container');
+            const contactUsSection = document.querySelector('.contact-us');
 
             if (book) {
                 // Display book details
@@ -69,9 +70,12 @@
                         <p><strong>Description:</strong> ${book.description}</p>
                     </div>
                 `;
+                // Ensure "Contact Us" button is visible
+                contactUsSection.style.display = 'block';
             } else {
-                // If the book is not found
+                // If the book is not found, display a message and hide "Contact Us"
                 bookDetailsContainer.innerHTML = '<p>No book found with that title.</p>';
+                contactUsSection.style.display = 'none';
             }
         }
     </script>
@@ -95,12 +99,10 @@
             flex-direction: column;
             background-image: url('images/kelly-sikkema-VBPzRgd7gfc-unsplash.jpg');
             background-size: auto; /* Ensures the image stays in its original size */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center center; /* Centers the image */
-    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
-}
-
-        
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+        }
 
         /* Hero Section */
         .hero {

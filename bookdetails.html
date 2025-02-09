@@ -20,18 +20,29 @@
         </div>
     </section>
 
-    <!-- Popup Modal -->
-    <div id="popup-modal" class="popup">
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+        <button onclick="sendRequest()">Contact Us</button>
+    </section>
+
+    <!-- Success Message Popup -->
+    <div id="success-message" class="popup">
         <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">×</span>
-            <p id="popup-message"></p>
+            <span class="close-btn" onclick="closeSuccessMessage()">×</span>
+            <p>Your request has been successfully sent to the book owner!</p>
         </div>
     </div>
 
     <script>
-        // Function to close the popup
-        function closePopup() {
-            document.getElementById('popup-modal').style.display = 'none';
+        // Close the success message popup
+        function closeSuccessMessage() {
+            document.getElementById('success-message').style.display = 'none';
+        }
+
+        // Simulate sending a message
+        function sendRequest() {
+            // Display the success message
+            document.getElementById('success-message').style.display = 'block';
         }
 
         // Retrieve the search query from the URL
@@ -47,39 +58,20 @@
 
             // Display the book details or show the "not found" message
             const bookDetailsContainer = document.getElementById('book-details-container');
-            const popupMessage = document.getElementById('popup-message');
 
             if (book) {
-                // Show the popup message and the book details
-                popupMessage.textContent = `Yes! The book "${book.title}" is available.`;
-                document.getElementById('popup-modal').style.display = 'block';
-
-                // Display book details and add the "Contact Us" button
+                // Display book details
                 bookDetailsContainer.innerHTML = `
                     <div class="book-card">
                         <h3>${book.title}</h3>
                         <p><strong>Author:</strong> ${book.author}</p>
                         <p><strong>Genre:</strong> ${book.genre}</p>
                         <p><strong>Description:</strong> ${book.description}</p>
-                        <button class="contact-btn" onclick="contactOwner('${book.ownerEmail}')">Contact Us</button>
                     </div>
                 `;
             } else {
-                // If the book is not found, show the "not found" message
-                popupMessage.textContent = 'Sorry, no book found with that title.';
-                document.getElementById('popup-modal').style.display = 'block';
-
+                // If the book is not found
                 bookDetailsContainer.innerHTML = '<p>No book found with that title.</p>';
-            }
-        }
-
-        // Function to handle the Contact Us button click
-        function contactOwner(ownerEmail) {
-            // Simulating sending an email to the book owner using mailto:
-            if (ownerEmail) {
-                window.location.href = `mailto:${ownerEmail}?subject=Request to borrow the book&body=Hello, I am interested in borrowing your book!`;
-            } else {
-                alert("No contact information available for this book owner.");
             }
         }
     </script>
@@ -101,8 +93,14 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
-            overflow: hidden; /* To prevent body scrolling due to popup */
-        }
+            background-image: url('images/kelly-sikkema-VBPzRgd7gfc-unsplash.jpg');
+            background-size: auto; /* Ensures the image stays in its original size */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+}
+
+        
 
         /* Hero Section */
         .hero {
@@ -140,7 +138,6 @@
 
         .book-details .book-card:hover {
             transform: translateY(-10px);
-            background-color: #e0f7fa;
         }
 
         .book-details h3 {
@@ -164,58 +161,56 @@
         }
 
         /* Contact Us Button */
-        .contact-btn {
+        .contact-us {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-us button {
+            padding: 10px 20px;
             background-color: #4A90E2;
             color: white;
+            font-size: 1.2rem;
             border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
             transition: background-color 0.3s ease;
         }
 
-        .contact-btn:hover {
+        .contact-us button:hover {
             background-color: #357ABD;
         }
 
-        /* Popup modal styles */
+        /* Success Message Popup styles */
         .popup {
             display: none;
             position: fixed;
-            z-index: 9999; /* Ensure the popup is on top */
+            z-index: 1;
+            left: 0;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%); /* Center horizontally */
-            width: auto;
-            height: 60px;
-            background-color: #4A90E2;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-align: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
-            display: flex;
-            opacity: 0;
-            animation: popupAnimation 0.5s forwards; /* Slide in popup */
         }
 
         .popup-content {
-            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
             text-align: center;
+            width: 300px;
         }
 
         .popup p {
             font-size: 1.2rem;
-            color: white;
+            color: #4A90E2;
             margin: 10px 0;
-            animation: blink 1.5s infinite;
         }
 
         .close-btn {
-            color: #fff;
+            color: #aaa;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
@@ -230,33 +225,6 @@
             text-decoration: none;
         }
 
-        /* Blinking effect */
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Slide in animation for the popup */
-        @keyframes popupAnimation {
-            0% { opacity: 0; top: -60px; }
-            100% { opacity: 1; top: 20px; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .book-details {
-                padding: 20px;
-            }
-
-            .book-details .book-card {
-                padding: 15px;
-            }
-        }
     </style>
 
 </body>

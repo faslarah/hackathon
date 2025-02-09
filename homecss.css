@@ -7,51 +7,35 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     color: #333;
+    background-image: url('images/evie-s-yDN0aAiHSMg-unsplash.jpg'); /* Replace with your desired image */
+    background-size: cover; /* This will make the image cover the entire page */
+    background-position: center; /* Keeps the image centered */
+    background-attachment: fixed; /* Keeps the image fixed when you scroll */
+    height: 100vh; /* Ensures the background takes full height */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
 header {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a dark overlay to make text more readable */
     color: #fff;
     padding: 20px 0;
-    background-image: url('images/home2.jpeg'); /* Example background image */
-    background-size: cover;
-    background-position: center;
+    text-align: center;
 }
 
 header .logo {
     font-size: 24px;
     font-weight: bold;
-    text-align: center;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
 }
 
 /* Hero Section */
 .hero {
-    background-color: #1a73e8;
+    background-color: rgba(144, 175, 215, 0.167); /* Adding transparency to overlay the background */
     color: #fff;
     text-align: center;
     padding: 50px 20px;
-    background-image: url('images/HOME.jpeg'); /* Hero background image */
-    background-size: cover;
-    background-position: center;
 }
 
 .hero h1 {
@@ -79,7 +63,7 @@ header nav ul li a {
 .search-bar button {
     padding: 10px 20px;
     background-color: #333;
-    color: #5f3535;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -91,12 +75,9 @@ header nav ul li a {
 
 /* Featured Books Section */
 .featured-books {
-    padding: 50px 20px;
-    background-color: #fff;
+    padding: 8rem 2rem;
+    background-color: rgba(144, 175, 215, 0.167); /* Optional: Add some transparency to background */
     text-align: center;
-    background-image: url('images/evie-s-yDN0aAiHSMg-unsplash.jpg'); /* Featured books background image */
-    background-size: cover;
-    background-position: center;
 }
 
 .featured-books h2 {
@@ -135,7 +116,7 @@ header nav ul li a {
 
 .book-card button {
     padding: 10px 15px;
-    background-color: #1a73e8;
+    background-color: rgba(144, 175, 215, 0.167);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -143,17 +124,14 @@ header nav ul li a {
 }
 
 .book-card button:hover {
-    background-color: #155bb5;
+    background-color:  rgba(144, 175, 215, 0.167);
 }
 
 /* Book Categories Section */
 .book-categories {
-    background-color: #f4f4f4;
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: Add some transparency to background */
     padding: 50px 20px;
     text-align: center;
-    background-image: url('images/evie-s-yDN0aAiHSMg-unsplash.jpg'); /* Categories background image */
-    background-size: cover;
-    background-position: center;
 }
 
 .book-categories h2 {
@@ -178,19 +156,16 @@ header nav ul li a {
 }
 
 .category-item:hover {
-    background-color: #1a73e8;
+    background-color:  rgba(144, 175, 215, 0.167);
     color: #fff;
 }
 
 /* Call to Action Section */
 .cta {
-    background-color: #1a73e8;
+    background-color:  rgba(144, 175, 215, 0.167); /* Adding transparency to overlay the background */
     color: #1a1616;
     text-align: center;
     padding: 40px 20px;
-    background-image: url('images/evie-s-yDN0aAiHSMg-unsplash.jpg'); /* Call to action background image */
-    background-size: cover;
-    background-position: center;
 }
 
 .cta h2 {
@@ -214,13 +189,10 @@ header nav ul li a {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    background-image: url('images/evie-s-yDN0aAiHSMg-unsplash.jpg'); /* Footer background image */
-    background-size: cover;
-    background-position: center;
 }
 
 footer ul {
@@ -247,6 +219,7 @@ footer ul li a {
     margin: 0 10px;
     text-decoration: none;
 }
+
 /* Container for search bar and button */
 .search-bar-container {
     display: flex;
@@ -277,11 +250,3 @@ footer ul li a {
 .search-bar-container button:hover {
     background-color: #45a049;
 }
-/* Reset margin and padding for the call to action section */
-.cta {
-    margin-top: 0;
-    padding-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-

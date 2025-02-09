@@ -45,17 +45,22 @@
             const bookGenre = document.getElementById("bookGenre").value;
             const bookDescription = document.getElementById("bookDescription").value;
 
-            // Store the book data in localStorage (you can store multiple books as an array)
-            const bookData = {
+            // Create the book object
+            const book = {
                 title: bookTitle,
                 author: bookAuthor,
                 genre: bookGenre,
                 description: bookDescription
             };
 
+            // Get the existing books from localStorage (if any)
             let books = JSON.parse(localStorage.getItem('books')) || [];
-            books.push(bookData); // Add the new book to the books array
-            localStorage.setItem('books', JSON.stringify(books)); // Store the updated books array in localStorage
+
+            // Add the new book to the array
+            books.push(book);
+
+            // Store the updated books array back in localStorage
+            localStorage.setItem('books', JSON.stringify(books));
 
             // Reset the form
             document.getElementById("addBookForm").reset();

@@ -19,7 +19,7 @@
         <p>Share the knowledge, one book at a time.</p>
         <!-- Search Bar and Search Button -->
         <div class="search-bar-container">
-            <input type="text" id="search-input" placeholder="Search for books..." onkeyup="searchBooks()">
+            <input type="text" id="search-input" placeholder="Search for books...">
             <button onclick="searchBooks()">Search</button>
         </div>
     </section>
@@ -27,7 +27,7 @@
     <!-- Featured Books Section -->
     <section class="featured-books">
         <h2>Featured Books</h2>
-        <div class="book-grid" id="bookGrid">
+        <div class="book-grid">
             <!-- Dynamically added books will appear here after search -->
         </div>
     </section>
@@ -53,8 +53,14 @@
     </footer>
 
     <script>
-        // Function to search books
         function searchBooks() {
-            const searchQuery = document.getElementById('search-input').value.toLowerCase();
-            const bookGrid = document.getElementById("bookGrid");
-            bookGrid.inner
+            const searchQuery = document.getElementById('search-input').value;
+            if (searchQuery) {
+                // Redirect to bookdetails.html with the search query as a URL parameter
+                window.location.href = `bookdetails.html?title=${encodeURIComponent(searchQuery)}`;
+            }
+        }
+    </script>
+
+</body>
+</html>

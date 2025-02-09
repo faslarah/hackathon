@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details | Book Sharing System</title>
+    <link rel="stylesheet" href="bookdetailscss.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Book Details</h1>
+    </section>
+
+    <!-- Book Details Section -->
+    <section class="book-details">
+        <div id="book-details-container">
+            <!-- Book details will be displayed here -->
+        </div>
+    </section>
+
+    <script>
+        // Retrieve the search query from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('title');
+
+        if (searchQuery) {
+            // Get the books from localStorage
+            const books = JSON.parse(localStorage.getItem('books')) || [];
+
+            // Find the book matching the search query
+            const book = books.find(b => b.title.toLowerCase() === searchQuery.toLowerCase());
+
+            // Display the book details if found
+            const bookDetailsContainer = document.getElementById('book-details-container');
+            if (book) {
+                bookDetailsContainer.innerHTML = `
+                    <div class="book-card">
+                        <h3>${book.title}</h3>
+                        <p><strong>Author:</strong> ${book.author}</p>
+                        <p><strong>Genre:</strong> ${book.genre}</p>
+                        <p><strong>Description:</strong> ${book.description}</p>
+                    </div>
+                `;
+            } else {
+                bookDetailsContainer.innerHTML = '<p>No book found with that title.</p>';
+            }
+        }
+    </script>
+
+</body>
+</html>

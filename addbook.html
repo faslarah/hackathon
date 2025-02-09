@@ -29,13 +29,15 @@
 
             <label for="bookDescription">Description:</label>
             <textarea id="bookDescription" name="bookDescription" rows="4" required></textarea>
-            
+
+            <label for="bookImage">Image URL:</label>
+            <input type="text" id="bookImage" name="bookImage" required>
+
             <button type="submit">Add Book</button>
         </form>
     </section>
 
     <script>
-        // Handle the form submission
         document.getElementById("addBookForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent page refresh
 
@@ -44,27 +46,30 @@
             const bookAuthor = document.getElementById("bookAuthor").value;
             const bookGenre = document.getElementById("bookGenre").value;
             const bookDescription = document.getElementById("bookDescription").value;
+            const bookImage = document.getElementById("bookImage").value;
 
-            // Create the book object
-            const book = {
+            // Create a new book object
+            const newBook = {
                 title: bookTitle,
                 author: bookAuthor,
                 genre: bookGenre,
-                description: bookDescription
+                description: bookDescription,
+                image: bookImage
             };
 
-            // Get the existing books from localStorage (if any)
+            // Get existing books from localStorage or create an empty array if none
             let books = JSON.parse(localStorage.getItem('books')) || [];
 
-            // Add the new book to the array
-            books.push(book);
+            // Add the new book to the books array
+            books.push(newBook);
 
-            // Store the updated books array back in localStorage
+            // Save the updated books array back to localStorage
             localStorage.setItem('books', JSON.stringify(books));
 
             // Reset the form
             document.getElementById("addBookForm").reset();
-            alert("Book added successfully!");
+
+            alert("Book Added Successfully!");
         });
     </script>
 

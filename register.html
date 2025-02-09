@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Book Sharing System</title>
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="reg.css">
     <script>
         function handleRegistration(event) {
@@ -34,6 +35,86 @@
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
 
+=======
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure the body takes full height */
+        body {
+            margin: 0;
+            height: 100vh; /* Full height */
+            font-family: Arial, sans-serif;
+            background-image: url("images/book-background.jpg"); /* Background image */
+            background-size: cover; /* Make sure the background image covers the entire screen */
+            background-position: center; /* Center the background image */
+            background-image: url("imagess/registerimg.jpeg"); /* Background image */
+            background-size: auto;
+             
+        }
+
+        /* Styling for the form */
+        form {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px; /* Limits the width of the container */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background to highlight contents */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional: Soft shadow to make the content stand out */
+            margin-top: 100px; /* Moves the form a little down */
+        }
+
+        /* Label and input field styling */
+        label, input, button {
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #fff; /* White color for footer text */
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/register" method="POST" id="register-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+>>>>>>> Stashed changes
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
 

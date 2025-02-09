@@ -7,7 +7,7 @@
 
 ## Team Members
 - Member 1: [FASEELA RAHMATH] - [SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY]
-- Member 2: [ADHYAGOSH] - [SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY]
+- Member 2: [ADHYAGHOSH] - [SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY]
 
 
 ### Hosted Project Link
@@ -45,17 +45,39 @@ For Software:
 
 ### Project Documentation
 For Software:
+1. Project Overview
+Project Name: BookSwapHub
+Platform Type: Web application
+Purpose: BookSwapHub is a platform designed for users to swap, share, and discover books. It aims to build a community where users can lend and borrow books easily, reducing costs and promoting shared knowledge.
+
+2. Functional Requirements
+The key functionality of the BookSwapHub website includes:
+  1.User Registration and Authentication
+
+Users can create an account by providing a username, email, and password.
+Users must log in to access the features of the platform (book listings, requests, etc.).
+Passwords must be securely stored using hashing techniques.
+
+2.Book Search and Browse
+
+Users can search for books by title, author, genre, or keywords.
+Users can filter search results based on criteria like genre, availability, and ratings.
+Users can view detailed information about each book, including its title, author, description, and availability.
+
+3.Book Details and Requesting
+
+Each book has a dedicated page with detailed information.
+Users can request a book, and the book owner will receive a notification.
+Book availability can be managed by the book owner, indicating if the book is available for swapping or borrowing.
+
+4.Book Uploading and Sharing
+
+Users can upload books they want to share, providing details like title, author, description, and condition.
+Users can update or delete their book listings as needed.
+
 
 # Screenshots (Add at least 3)
-![LOGIN PAGE](LOGINPAGE.jpeg)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
+https://drive.google.com/drive/folders/1GPOttlCl9DgDz3tzrvmHAYyjbSB1beAV?usp=drive_link
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
 *Add caption explaining your workflow*
@@ -83,17 +105,17 @@ For Hardware:
 *Explain the final build*
 
 ### Project Demo
-# Video
-[Add your demo video link here]
+[# Video](https://drive.google.com/file/d/1uAvMtv6KdfUN7UtLXrcIpqjvcDOCTmSr/view?usp=drive_link)
+
 *Explain what the video demonstrates*
 
 # Additional Demos
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [ADHYAGOSH]: [BACKEND,WEBPAGE DESIGH]
+- [FASEELA RAHMATH]: [FRONDEND,WEBPAGE DESIGN]
+
 
 ---
 Made with ❤️ at TinkerHub

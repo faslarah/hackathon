@@ -1,23 +1,23 @@
-# [Project Name] 🎯
+# [BookSwapHub] 🎯
 
 
 ## Basic Details
 ### Team Name: [TriFusion]
 
 
-### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+## Team Members
+- Member 1: [FASEELA RAHMATH] - [SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY]
+- Member 2: [ADHYAGOSH] - [SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY]
+
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://hackathon-eight-lovat.vercel.app/
 
 ### Project Description
-[2-3 lines about what your project does]
+A book sharing system is a way for people to lend and borrow books from one another, often through a community or library network. It helps make books accessible to more people without needing to buy them. Participants can exchange books they’ve already read for new ones, promoting reading and saving money. This system encourages sharing, reduces waste, and creates a sense of connection among people who enjoy reading. It's a simple and effective way to make literature available to everyone, regardless of financial resources.
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+problem being solved is the unused book clutter in people's homes, offices, and libraries, while simultaneously offering a solution to the absurd waste of resources in constantly purchasing books that could easily be shared or exchanged.
 
 ### The Solution
 [How are you solving it? Keep it fun!]
@@ -25,15 +25,15 @@
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+-HTML
+-CSS
+-JAVASCRIPT
+-TEXT EDITOR
+-WEB BROWSER
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+-COMPUTER
+-NETWORK HARDWARE
 
 ### Implementation
 For Software:

@@ -20,7 +20,20 @@
         </div>
     </section>
 
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <p id="popup-message"></p>
+        </div>
+    </div>
+
     <script>
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('popup-modal').style.display = 'none';
+        }
+
         // Retrieve the search query from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const searchQuery = urlParams.get('title');
@@ -32,23 +45,219 @@
             // Find the book matching the search query
             const book = books.find(b => b.title.toLowerCase() === searchQuery.toLowerCase());
 
-            // Display the book details if found
+            // Display the book details or show the "not found" message
             const bookDetailsContainer = document.getElementById('book-details-container');
+            const popupMessage = document.getElementById('popup-message');
+
             if (book) {
+                // Show the popup message and the book details
+                popupMessage.textContent = `Yes! The book "${book.title}" is available.`;
+                document.getElementById('popup-modal').style.display = 'block';
+
+                // Display book details and add the "Contact Us" button
                 bookDetailsContainer.innerHTML = `
                     <div class="book-card">
                         <h3>${book.title}</h3>
                         <p><strong>Author:</strong> ${book.author}</p>
                         <p><strong>Genre:</strong> ${book.genre}</p>
                         <p><strong>Description:</strong> ${book.description}</p>
-                        <img src="${book.image}" alt="${book.title}">
+                        <button class="contact-btn" onclick="contactOwner('${book.ownerEmail}')">Contact Us</button>
                     </div>
                 `;
             } else {
+                // If the book is not found, show the "not found" message
+                popupMessage.textContent = 'Sorry, no book found with that title.';
+                document.getElementById('popup-modal').style.display = 'block';
+
                 bookDetailsContainer.innerHTML = '<p>No book found with that title.</p>';
             }
         }
+
+        // Function to handle the Contact Us button click
+        function contactOwner(ownerEmail) {
+            // Simulating sending an email to the book owner using mailto:
+            if (ownerEmail) {
+                window.location.href = `mailto:${ownerEmail}?subject=Request to borrow the book&body=Hello, I am interested in borrowing your book!`;
+            } else {
+                alert("No contact information available for this book owner.");
+            }
+        }
     </script>
+
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden; /* To prevent body scrolling due to popup */
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #4A90E2;
+            margin-bottom: 10px;
+        }
+
+        /* Book Details Section */
+        .book-details {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 40px;
+        }
+
+        .book-details .book-card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .book-details .book-card:hover {
+            transform: translateY(-10px);
+            background-color: #e0f7fa;
+        }
+
+        .book-details h3 {
+            font-size: 2rem;
+            color: #4A90E2;
+            margin-bottom: 10px;
+        }
+
+        .book-details p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .book-details strong {
+            color: #333;
+        }
+
+        .book-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Contact Us Button */
+        .contact-btn {
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #357ABD;
+        }
+
+        /* Popup modal styles */
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 9999; /* Ensure the popup is on top */
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            width: auto;
+            height: 60px;
+            background-color: #4A90E2;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            opacity: 0;
+            animation: popupAnimation 0.5s forwards; /* Slide in popup */
+        }
+
+        .popup-content {
+            width: 100%;
+            text-align: center;
+        }
+
+        .popup p {
+            font-size: 1.2rem;
+            color: white;
+            margin: 10px 0;
+            animation: blink 1.5s infinite;
+        }
+
+        .close-btn {
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Blinking effect */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Slide in animation for the popup */
+        @keyframes popupAnimation {
+            0% { opacity: 0; top: -60px; }
+            100% { opacity: 1; top: 20px; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .book-details {
+                padding: 20px;
+            }
+
+            .book-details .book-card {
+                padding: 15px;
+            }
+        }
+    </style>
 
 </body>
 </html>
